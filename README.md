@@ -40,3 +40,13 @@ Los datos vendran en el siguiente formato
 La busqueda devolvera libros con autores vivos en el siglo XIX.
 
 
+#### Instalacion
+
+Puedes descargar este proyecto y usarlo localmente desde el siguiente enlace
+```http
+  https://github.com/SebastianIsmaelG/LiterAlura.git
+```
+O utilizando la consola de comandos
+```http
+  git clone git@github.com:SebastianIsmaelG/LiterAlura.git
+```
