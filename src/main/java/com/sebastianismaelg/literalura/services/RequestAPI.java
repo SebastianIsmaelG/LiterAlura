@@ -6,7 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 
 public class RequestAPI {
-    public String obtenerDatos(String url) {
+    public String obtainData(String url) {
         HttpClient client = HttpClient.newHttpClient();
         java.net.http.HttpRequest request = java.net.http.HttpRequest.newBuilder()
                 .uri(URI.create(url))
