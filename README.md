@@ -41,7 +41,11 @@ La busqueda devolvera libros con autores vivos en el siglo XIX.
 
 
 #### Instalacion
-
+El sistema almacena datos mediante una instancia en Postgresql, debe instalar pgAdmin4 y crear una base de datos de acuerdo a sus credenciales en application.properties
+Puedes descargar PgAdmin4 desde este enlace 
+```http
+  https://www.pgadmin.org/download/
+```
 Puedes descargar este proyecto y usarlo localmente desde el siguiente enlace
 ```http
   https://github.com/SebastianIsmaelG/LiterAlura.git
