@@ -2,6 +2,7 @@ package com.sebastianismaelg.literalura.main;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sebastianismaelg.literalura.models.BookRecord;
 import com.sebastianismaelg.literalura.services.ConvertData;
 import com.sebastianismaelg.literalura.services.RequestAPI;
 import org.springframework.stereotype.Component;
@@ -104,24 +105,21 @@ public class Main {
     private void findRegiBooks() {
     }
 
-    public class  ConvertData  {
-        private final ObjectMapper objectMapper = new ObjectMapper();
-
-        //@Override
-        public <T> T obtainData(String json, Class<T> tClass) {
-            try {
-                return objectMapper.readValue(json,tClass);
-
-            } catch (JsonProcessingException e) {
-
-                throw new RuntimeException(e);
-            }
-        }
-    }
-    private void findByTitle() {
+    private BookRecord BookData(){
         System.out.println("please enter the book title");
         String nameEnter = write.nextLine().toLowerCase(Locale.ROOT);
         var response = requestAPI.obtainData(URL+"?search="+nameEnter.replace("","+"));
+        BookRecord data = convertData.obtainData(response, BookRecord.class);
+        if (data.title()!= null){
+            System.out.println("Data saved to : "+data.title());
+        }else {
+            System.out.println("The search result for "+nameEnter+" did not return any results, try again.");
+        }
+        return data;
+    }
+    private void  findByTitle() {
+        BookRecord dataRecord = BookData();
+
 
     }
 }
